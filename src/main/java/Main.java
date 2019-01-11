@@ -1,11 +1,5 @@
 import algorithms.*;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
 /**
  * Program entry point.
  */
@@ -129,7 +123,6 @@ class Main {
 
         // 008 - Example of the Genetic Algorithm.
         /*
-        */
         // Letter operation
         Supplier<Character> randChar = () -> {
             String alphabet = "abcdefghijklmnopqrstuvwxyz !";
@@ -146,15 +139,24 @@ class Main {
         };
 
         // Fitness function
-        Function<String, Double> f = (String x) -> {
+        // Function<String, Double> f = (String x) -> { // Char to char distance
+        //     Double fitness = 0.0;
+        //     for (int i = 0; i < x.length(); i++) {
+        //         fitness -= Math.abs(x.charAt(i) - "Hello world !".charAt(i));
+        //     }
+        //     return fitness;
+        // };
+
+        Function<String, Double> f = (String x) -> { // Good char
             Double fitness = 0.0;
             for (int i = 0; i < x.length(); i++) {
-                fitness -= Math.abs(x.charAt(i) - "Hello world !".charAt(i));
+                if (x.charAt(i) == "Hello world !".charAt(i))
+                    fitness += 1.0f;
             }
             return fitness;
         };
 
-        // Mutator operation
+        // Mutator operator
         Function<String, String> m1 = (String x) -> {
             Random r = new Random();
             char[] ca = x.toCharArray();
@@ -162,9 +164,57 @@ class Main {
             return String.valueOf(ca);
         };
 
+        // One point crossover operator
+        BiFunction<String, String, String> co1 = (String x1, String x2) -> {
+            char[] ca = x2.toCharArray();
+            int slitIndex = new Random().nextInt(x1.length());
+            for (int i = 0; i < slitIndex; i++) {
+                ca[i] = x1.charAt(i);
+            }
+            return String.valueOf(ca);
+        };
+
+        // Uniform point crossover operator
+        BiFunction<String, String, String> co2 = (String x1, String x2) -> {
+            char[] ca = x1.toCharArray();
+            Random r = new Random();
+            for (int i = 0; i < x1.length(); i++) {
+                if (r.nextBoolean())
+                    ca[i] = x2.charAt(i);
+            }
+            return String.valueOf(ca);
+        };
+
         GeneticAlgorithm<String> ga = new GeneticAlgorithm<>(g, f);
+        ga.setRankBasedSelection();
         ga.addVariationOperator(m1);
-        List<String> s = ga.run(1000, 1000, 10, 0.1F, true);
-        s.forEach(System.out::println);
+        ga.addVariationOperator(co1);
+        ga.addVariationOperator(co2);
+        List<String> s = ga.run(1000, 1000, 10, 0.2F, true);
+        Double sum = s.stream().map(f::apply).reduce((Double x1, Double x2) -> x1 + x2).orElse(0.0);
+        s.forEach((x) -> {
+            System.out.println(f.apply(x));
+            System.out.println(x);
+            System.out.println();
+        });
+        System.out.println(sum / s.size());
+        */
+
+        // 009 - Example of Genetic Programming.
+        /*
+        // TODO
+        */
+
+        // 010 - Example of PSO.
+        /*
+        */
+        ParticleSwarmOptimisation pso = new ParticleSwarmOptimisation();
+        Double[] x = pso.run(100, 10000, 10);
+        System.out.println("Fitness: " + pso.fitness(x).toString());
+        for (Double c : x) {
+            System.out.print(c);
+            System.out.print(" ");
+        }
+        System.out.println();
     }
 }

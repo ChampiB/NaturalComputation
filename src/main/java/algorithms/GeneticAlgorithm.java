@@ -1,10 +1,14 @@
 package algorithms;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 /**
  * Implementation of the genetic algorithm.
@@ -14,6 +18,7 @@ public class GeneticAlgorithm<T> {
 
     private Supplier<T> generator;
     private Function<T, Double> fitness;
+    private BiFunction<List<T>, Integer, List<T>> selection;
     private List<Function<T, T>> varOp1 = new ArrayList<>();
     private List<BiFunction<T, T, T>> varOp2 = new ArrayList<>();
 
@@ -26,6 +31,7 @@ public class GeneticAlgorithm<T> {
     GeneticAlgorithm(Supplier<T> generator, Function<T, Double> fitness) {
         this.generator = generator;
         this.fitness = fitness;
+        setFittestSelection();
     }
 
     /**
@@ -86,30 +92,109 @@ public class GeneticAlgorithm<T> {
     }
 
     /**
-     * Select a population part.
-     * @param p the initial population.
-     * @param n the final population size.
-     * @return the final population.
+     * Change the function in charge of the selection of a population part.
      */
-    private
-    List<T> selection(List<T> p, final int n) {
-        List<T> np = new LinkedList<>();
-        List<Double> f = p.stream().map((x) -> fitness.apply(x)).collect(Collectors.toList());
+    public
+    void setFittestSelection() {
+        this.selection = (List<T> p, Integer n) -> {
+            List<T> np = new LinkedList<>();
+            List<Double> f = p.stream().map((x) -> fitness.apply(x)).collect(Collectors.toList());
 
-        int i = 0;
-        while (i < n) {
-            try {
-                final int index = f.indexOf(Collections.max(f));
-                np.add(p.get(index));
-                p.remove(index);
-                f.remove(index);
-            } catch (NoSuchElementException e) {
-                System.err.println(e.getMessage());
-                break;
+            int i = 0;
+            while (i < n) {
+                try {
+                    final int index = f.indexOf(Collections.max(f));
+                    np.add(p.get(index));
+                    p.remove(index);
+                    f.remove(index);
+                } catch (NoSuchElementException e) {
+                    System.err.println(e.getMessage());
+                    break;
+                }
+                ++i;
             }
-            ++i;
-        }
-        return np;
+            return np;
+        };
+    }
+
+    /**
+     * Change the function in charge of the selection of a population part.
+     */
+    public
+    void setRouletteWheelSelection() {
+        this.selection = (List<T> p, Integer n) -> {
+            List<Double> fd = p.stream().map((x) -> fitness.apply(x)).collect(Collectors.toList());
+
+            double min = Collections.min(fd);
+            double max = Collections.max(fd);
+
+            List<Float> ff = fd.stream()
+                    .map((Double x) -> (x - min) / (max - min))
+                    .map((Double x) -> Float.valueOf(x.toString()))
+                    .collect(Collectors.toList());
+
+            List<T> np = new LinkedList<>();
+            int i = 0;
+            while (i < n) {
+                try {
+                    final int index = TowerSampling.rate(ArrayUtils.toPrimitive(ff.toArray(new Float[0])));
+                    np.add(p.get(index));
+                    p.remove(index);
+                    ff.remove(index);
+                } catch (NoSuchElementException e) {
+                    System.err.println(e.getMessage());
+                    break;
+                }
+                ++i;
+            }
+            return np;
+        };
+    }
+
+    /**
+     * Change the function in charge of the selection of a population part.
+     */
+    public
+    void setRankBasedSelection() {
+        this.selection = (List<T> p, Integer n) -> {
+            Map<T, Double> popAndFit = new HashMap<>();
+            for (T i: p)
+                popAndFit.put(i, fitness.apply(i));
+
+            List<T> rankedPop = popAndFit.entrySet().stream()
+                    .sorted(Map.Entry.comparingByValue())
+                    .map(Map.Entry::getKey)
+                    .collect(Collectors.toList());
+
+            List<Float> rates = Stream
+                    .iterate(0.0F, i -> i + 1.0F)
+                    .limit(rankedPop.size())
+                    .collect(Collectors.toList());
+
+            List<T> np = new LinkedList<>();
+            int i = 0;
+            while (i < n) {
+                try {
+                    final int index = TowerSampling.rate(ArrayUtils.toPrimitive(rates.toArray(new Float[0])));
+                    np.add(rankedPop.get(index));
+                    rankedPop.remove(index);
+                    rates.remove(index);
+                } catch (NoSuchElementException e) {
+                    System.err.println(e.getMessage());
+                    break;
+                }
+                ++i;
+            }
+            return np;
+        };
+    }
+
+    /**
+     * Change the function in charge of the selection of a population part.
+     */
+    public
+    void setTournementSelection() {
+        // TODO
     }
 
     /**
@@ -149,7 +234,7 @@ public class GeneticAlgorithm<T> {
      * @param maxI the number of generation to run.
      * @param ps the population size.
      * @param n the number of solutions to return.
-     * @param ss the strength of selection (zero => no death & 1 => no survivor).
+     * @param ss the strength of fittestSelection (zero => no death & 1 => no survivor).
      * @return the best solutions found.
      */
     public
@@ -160,10 +245,10 @@ public class GeneticAlgorithm<T> {
         List<T> p = generation(ps);
         int i = 0;
         while (i < maxI) {
-            p = selection(p, (int)(ps * ss));
+            p = selection.apply(p, (int)(ps * ss));
             p = variation(p, ps, elitism);
             ++i;
         }
-        return selection(p, n);
+        return selection.apply(p, n);
     }
 }

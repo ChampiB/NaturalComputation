@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47c70b83-cc92-4240-897c-6f621514495a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/AdelmanComputing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/CellularAutomata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/GeneticAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/Gillespie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/Selection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/TowerSampling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/GeneticProgramming.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/ParticleSwarmOptimisation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/GeneticAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/GeneticAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algorithms/GeneticAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithms/GeneticAlgorithm.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,34 +22,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <file leaf-file-name="ParticleSwarmOptimisation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/ParticleSwarmOptimisation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="166" column="51" selection-start-line="166" selection-start-column="51" selection-end-line="166" selection-end-column="51" />
+            <state relative-caret-position="204">
+              <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#222#223#0" expanded="true" />
+                <element signature="e#297#298#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneticAlgorithm.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/GeneticAlgorithm.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="125" column="20" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#912#913#0" expanded="true" />
-                <element signature="e#950#951#0" expanded="true" />
-                <element signature="e#1178#1179#0" expanded="true" />
-                <element signature="e#1216#1217#0" expanded="true" />
-                <element signature="e#1662#1663#0" expanded="true" />
-                <element signature="e#1744#1745#0" expanded="true" />
-                <element signature="e#2002#2003#0" expanded="true" />
-                <element signature="e#2055#2056#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="496">
+              <caret line="211" column="39" selection-start-line="211" selection-start-column="39" selection-end-line="211" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -64,6 +53,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fit</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,7 +72,11 @@
         <option value="$PROJECT_DIR$/src/main/java/algorithms/Gillespie.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithms/CellularAutomata.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithms/AdelmanComputing.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/algorithms/GeneticAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithms/GeneticProgramming.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithms/ParticuleSwarmOpitimisation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithms/ParticleSwarmOptimisation.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
@@ -246,10 +244,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32910052" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23915344" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25256342" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32910052" />
       <window_info anchor="right" id="Google Cloud Storage" order="3" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -266,7 +265,6 @@
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -284,9 +282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1273">
           <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -301,31 +296,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="66" column="40" lean-forward="true" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/markov_chain/README.md" />
     <entry file="file://$PROJECT_DIR$/markov_chain/turtle/src/turtle/algorithm/TowerSampling.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/Selection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/TowerSampling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-197">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/Gillespie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -352,30 +327,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="166" column="51" selection-start-line="166" selection-start-column="51" selection-end-line="166" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/Selection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/stream/Stream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/TowerSampling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/GeneticAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="125" column="20" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
+        <state relative-caret-position="439">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1216#1217#0" expanded="true" />
             <element signature="e#1662#1663#0" expanded="true" />
-            <element signature="e#1744#1745#0" expanded="true" />
-            <element signature="e#2002#2003#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
+            <element signature="e#1729#1730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/GeneticProgramming.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="211" column="39" selection-start-line="211" selection-start-column="39" selection-end-line="211" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithms/ParticleSwarmOptimisation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -446,6 +459,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: org.apache.commons:commons-lang3:3.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
