@@ -10,6 +10,7 @@ public class ParticleSwarmOptimisation {
 
     private int NB_DIM = 2;
     private double W = 0.7;
+    private double MAX_SPEED = 10;
 
     /**
      * Individual of the PSO.
@@ -63,6 +64,10 @@ public class ParticleSwarmOptimisation {
                     W * x.speed[i] +
                     r.nextDouble() * (x.best[i] - x.pos[i]) +
                     r.nextDouble() * (ind.get(index).pos[i] - x.pos[i]);
+            if (x.speed[i] < -MAX_SPEED)
+                x.speed[i] = -MAX_SPEED;
+            if (x.speed[i] > MAX_SPEED)
+                x.speed[i] = MAX_SPEED;
         }
     }
 
